@@ -24,13 +24,18 @@
 
 class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
-
+        // Create a new HashSet to store unique values
         Set<Integer> uniques = new HashSet<>();
+        // Loop through the input array nums
         for (int i = 0; i < nums.length; i++) {
+            // Check if the current element already exists in the HashSet
             if (uniques.contains(nums[i])) {
+                // If it does, then we have found a duplicate, so return true
                 return true;
             }
+            // Otherwise, add the current element to the HashSet
             uniques.add(nums[i]);
+            // If we have looped through the entire array and haven't found a duplicate, return false
         }
         return false;
     }
