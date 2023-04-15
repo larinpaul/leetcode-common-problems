@@ -31,6 +31,9 @@
 
 // Follow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?
 
+import java.util.HashMap;
+import java.util.Map;
+
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         // Create a hashmap to store the values and their indices
