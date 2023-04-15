@@ -33,7 +33,7 @@ class ValidPalindrome {
     // Define a method that takes a String as an input and returns a boolean
     // depending on whether it is a palindrome or not
     public static boolean isPalindrome(String s) {
-        // Convert the string to lowercase and remove all non-alphanumeric characters
+        // Convert the String to lowercase and remove all non-alphanumeric characters
         s = s.toLowerCase();
         s = s.replaceAll("[^a-z0-9]", "");
         // Initialize two pointers at the start and end of the string
