@@ -127,11 +127,12 @@ class Trie {
 //        Then it moves to the next node. After looping through all the characters,
 //        it returns true if the current node is marked as the end of the word.
 
-//        startsWith: this method takes a prefix as a parameter and returns true if there is any word in the trie
+//        startsWith: this method takes a prefix as a parameter and returns true
+//        if there is any word in the trie
 //        that starts with that prefix, or false otherwise.
 //        It starts from the root node and loops through each character of the prefix.
-//        For each character, it gets the index of the character in the alphabet and checks
-//        if the current node has a child node for that character.
+//        For each character, it gets the index of the character in the alphabet
+//        and checks if the current node has a child node for that character.
 //        If not, it returns false as there is no word that starts with that prefix.
 //        Then it moves to the next node. After looping through all the characters,
 //        it returns true as it has reached the end of the prefix without any null node.
