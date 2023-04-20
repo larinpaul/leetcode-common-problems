@@ -87,7 +87,22 @@ class Solution {
         }
     }
 
+    // We first start by checking if the grid is empty or null, and return zero if that is the case.
+    // We then get the dimensions of the grid, which are m rows and n columns
+    // We initialize a variable called islands to keep track of the number of islands we find in the grid.
+    // We loop through each cell in the grid using a nested for loop.
+    // For each cell, we check if it is '1' which means it is part of an island.
+    // If so, we do the following steps:
+    // * We increment the islands variable by one, since we have found a new island
+    // * We mark the cell as visited by changing its value to '0', so that we don't count it again.
+    // * We call a helper function called dfs that performs a depth-first search on the
+    //   current cell and its neighbors. This function will mark all the cells that belong to
+    //   the same island as visited and explore them recursively.
+    // After looping through all the cells in the grid, we return the final value of islands as our answer.
+
+    // The time complexity of this solution is O(mn), where m and n are the dimensions of the grid.
+    // This is because we visit each cell at most once in our DFS algorithm. The space
+    // complexity is O(mn) as well, since we may need to store
+    // up to mn recursive calls in the worst case when all cells are '1'.
+
 }
-
-
-
