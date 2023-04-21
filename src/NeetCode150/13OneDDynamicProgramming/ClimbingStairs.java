@@ -43,7 +43,7 @@ class ClimbingStairs {
         dp[1] = 1;
         // Loop from step 2 to n
         for (int i = 2; i <= n; i++) {
-            // The number of ways to climb to step number i
+            // The number of ways to climb to step i
             // is the sum of the number of ways to climb to the previous two steps
             dp[i] = dp[i - 1] + dp[i - 2];
         }
