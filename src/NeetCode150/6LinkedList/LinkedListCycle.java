@@ -38,7 +38,7 @@
 
 public class LinkedListCycle {
 
-    class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
 
