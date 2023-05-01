@@ -43,44 +43,40 @@ import javax.swing.tree.TreeNode;
  */
 class DiameterOfABinaryTree {
 
-    // The diameter of a binary tree is the length of the longest path between any two nodes in the
-    // tree. This path may or may not pass through the root. The length of a path between two nodes
-    // is represented by the number of edges between them.
+    // The diameter of a binary tree is the maximum value
+    // of the sum of the heights of the left and right subtree sof any node in the tree.
+    // To find this value, we can use a recursive function
+    // that returns the height of a subtree and also updates a global variable
+    // that stores the current diameter.
+    // The height of a subtree is the maximum of the heights
+    // of its left and right children plus one.
+    // The diameter of a subtree is the maximum of the diameters of its left and right children
+    // and the sum of the heights of its left and right children.
+    // We can initialize the global variable to zero and update it
+    // whenever we find a larger diameter.
+    // The final answer will be the value of the global variable after traversing the whole tree.
 
-    // To find the diameter of a binary tree, we can use the following idea:
-    // * For each node, we can calculate the height of its left subtree and right subtree.
-    // * The diameter of the tree passsing through that node is the sum of the heights of its left and
-    // right subtrees plus one (for the node itself).
-    // * We can compare the diameters of all nodes and return the maximum one as the answer.
+    // A global variable to store the current diameter
+    int diameter = 0;
 
     public int diameterOfBinaryTree(TreeNode root) {
-        // Base case: empty tree has zero diameter
-        if (root == null) return 0;
-
-        // Initialize a global variable to store the maximum diameter
-        int maxDiameter = 0;
-
-        // Define a helper function to calculate the height of a subtree
-        int height(TreeNode node) {
-            // Base case: bull node has zero height
-            if (node == null) return 0;
-
-            // Recursively calculate the height of left and right subtrees
-            int leftHeight = height(node.left);
-            int rightHeight = height(node.right);
-
-            // Update the maximum diameter with the current node's diameter
-            maxDiameter = Math.max(maxDiameter, leftHeight + rightHeight + 1);
-
-            // Return the height of the current node
-            return Math.max(leftHeight, rightHeight) + 1;
-        }
-
-        // Cal the helper function on the root node
+        // Call the recursive function on the root
         height(root);
+        // Return the final answer
+        return diameter;
+    }
 
-        // Return the maximum diameter
-        return maxDiamter - 1; // Subtract one to get the number of edges
+    // A recursive function that returns the height of a subtree and updates the diameter
+    public int height(TreeNode node) {
+        // Base case: if node is null, return 0
+        if (node == null) return 0;
+        // Recursively find the heights of left and right subtrees
+        int leftHeight = height(node.left);
+        int rightHeight = height(node.right);
+        // Update the diameter if the sum of left and right heights is larger than current diameter
+        diameter = Math.max(diameter, leftHeight + rightHeight);
+        // Return the height of this subtree as max of left and right heights plus one
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
 
