@@ -24,8 +24,6 @@
 // * -10^4 <= root.val <= 10^4
 // * -10^4 <= subRoot.val <= 10^4
 
-import javax.swing.tree.TreeNode;
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -42,6 +40,20 @@ import javax.swing.tree.TreeNode;
  * }
  */
 class SubtreeOfAnotherTree {
+
+    // Definition for a binary tree node.
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
     // The main idea is to use a recursive method isSubtree that takes two tree nodes as parameters and
     // returns true if the second node is a subtree of the first node, false otherwise.
@@ -70,17 +82,19 @@ class SubtreeOfAnotherTree {
         // or if subRoot is a subtree of root's left or right child
         return isSameTree(root, subRoot) || isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
 
-        // Helper method to check if two trees have the same value and structure
-        private boolean isSameTree(TreeNode p, TreeNode q) {
-            // Base case: if either p or q is null, return true if both are null,
-            // false otherwise
-            if (p == null || q == null) {
-                return p == q;
-            }
-            // Recursive case: check if p and q have the same value and their left and right subtrees
-            // are also the same
-            return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+
+    }
+
+    // Helper method to check if two trees have the same value and structure
+    private boolean isSameTree(TreeNode p, TreeNode q) {
+        // Base case: if either p or q is null, return true if both are null,
+        // false otherwise
+        if (p == null || q == null) {
+            return p == q;
         }
+        // Recursive case: check if p and q have the same value and their left and right subtrees
+        // are also the same
+        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 
     // Big O:
