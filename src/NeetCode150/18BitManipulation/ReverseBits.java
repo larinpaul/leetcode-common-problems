@@ -66,7 +66,7 @@ public class ReverseBits {
         int result = 0; // initialize a new integer to store the reversed bits
         for (int i = 0; i < 32; i++) { // loop over the 32 bits of n
             result <<= 1; // left shift result by one bit to make space for the new bit
-            result |= (n & 1); // set teh new bit of result by doing bitwise OR with the rightmost bit of n
+            result |= (n & 1); // set the new bit of result by doing bitwise OR with the rightmost bit of n
             n >>>= 1; // right shift n by one bit (use unsigned right shift to avoid sign extension)
         }
         return result; // return the reversed bits
