@@ -56,6 +56,20 @@ class SameTree {
     // The space complexity of this solution is O(h), where h is the height of the tree.
     // This is because we use a stack space for the recursive calls, and the maximum depth of the recursion is h.
 
+    private class TreeNode {
+
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public boolean isSameTree(TreeNode p, TreeNode q) {
         // base case: both nodes are null
         if (p == null && q == null) {

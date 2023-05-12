@@ -73,7 +73,7 @@ class MissingNumber {
     // and XORing a number with zero result in the same number. Therefore, if we XOR all the numbers in
     // the range [0, n] and all the numbers in the array nums, the result will be the missing number.
 
-    public int missingNumber(int[] nums) {
+    public int missingNumberXOR(int[] nums) {
         // initialize n as the length of nums
         int n = nums.length;
         // initialize result as n

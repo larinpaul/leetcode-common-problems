@@ -36,6 +36,17 @@
  */
 class ReverseLinkedList {
 
+    private class ListNode {
+        // Define the data and next fields
+        int data;
+        ListNode next;
+        // Define a constructor that takes the data as an argument
+        ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     // Define a method that takes the head of a linked list
     // and returns the head of the reversed list
     public ListNode reverseList(ListNode head) {
@@ -57,11 +68,11 @@ class ReverseLinkedList {
         return prev;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new ReverseLinkedList().reverseList(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))))); // 5 -> 4 -> 3 -> 2 -> 1
-        System.out.println(new ReverseLinkedList().reverseList(new ListNode(1, new ListNode(2)))); // 2 -> 1
-        System.out.println(new ReverseLinkedList().reverseList(null)); // null
-    }
+//    public static void main(String[] args) {
+//        System.out.println(new ReverseLinkedList().reverseList(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))))); // 5 -> 4 -> 3 -> 2 -> 1
+//        System.out.println(new ReverseLinkedList().reverseList(new ListNode(1, new ListNode(2)))); // 2 -> 1
+//        System.out.println(new ReverseLinkedList().reverseList(null)); // null
+//    }
 
 }
 

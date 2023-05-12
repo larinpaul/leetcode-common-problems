@@ -28,6 +28,8 @@
 // returns the height of a subtree if is balanced, or -1 if it is not. Then, we can use this function
 // to check the balance of the root and its subtrees.
 
+import javax.swing.tree.TreeNode;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -45,6 +47,20 @@
  */
 
 class BalancedBinaryTree {
+
+    private class TreeNode {
+
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
     public boolean isBalanced(TreeNode root) {
 
@@ -72,7 +88,7 @@ class BalancedBinaryTree {
         // return -1
         if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) return -1;
         // Otherwise, return the maximum of the heights plus one
-        return Math.max(leftHegith, rightHeight) + 1;
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
 

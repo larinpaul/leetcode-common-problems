@@ -39,7 +39,7 @@
 
 import java.util.PriorityQueue;
 
-class Solution {
+class SolutionLastStoneWeight {
 
     // Explanation:
 

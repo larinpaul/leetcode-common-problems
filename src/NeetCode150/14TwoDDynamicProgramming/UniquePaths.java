@@ -74,7 +74,7 @@ class UniquePaths {
 // after each iteration. This will reduce the space complexity to O(n),
 // where n is the number of columns in the grid.
 
-class Solution {
+class SolutionUniquePaths {
 
     public int uniquePaths(int m, int n) {
         // We can use two 1D arrays to store the previous and current rows of results

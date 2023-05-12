@@ -24,8 +24,6 @@
 // * The number of nodes in the tree is in the range [1, 10^4].
 // * -100 <= Node.val <= 100
 
-import javax.swing.tree.TreeNode;
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -42,6 +40,20 @@ import javax.swing.tree.TreeNode;
  * }
  */
 class DiameterOfABinaryTree {
+
+    private class TreeNode {
+
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
     // The diameter of a binary tree is the maximum value
     // of the sum of the heights of the left and right subtree sof any node in the tree.

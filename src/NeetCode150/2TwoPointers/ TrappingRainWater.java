@@ -24,7 +24,7 @@
 // 1 <= n <= 2 * 10^4
 // 0 <= height[i] <= 10^5
 
-class Solution {
+class SolutionTrappingRainWater {
     // Define a method that takes an array of height and return the amount of water trapped
     public int trap(int[] height) {
         // Initialize two pointers: left and right
@@ -76,8 +76,8 @@ class Solution {
 
     public static void main(String[] args) {
         // Test some examples
-        System.out.println(new TrappingRainWater().trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1})); // 6
-        System.out.println(new TrappingRainWater().trap(new int[]{4, 2, 0, 3, 2, 5})); // 9
+        System.out.println(new SolutionTrappingRainWater().trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1})); // 6
+        System.out.println(new SolutionTrappingRainWater().trap(new int[]{4, 2, 0, 3, 2, 5})); // 9
 
     }
 

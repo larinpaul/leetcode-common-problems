@@ -51,7 +51,7 @@
 
 import java.util.*;
 
-class Solution {
+class SolutionReconstructItinerary {
     public List<String> findItinerary(List<List<String>> tickets) {
         // Create a graph with priority queue for each node
         Map<String, PriorityQueue<String>> graph = new HashMap<>();

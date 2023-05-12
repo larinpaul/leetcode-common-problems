@@ -49,6 +49,30 @@ class MergeTwoSortedLists {
     // THe time complexity of this algorithm is O(M + N), where M and N are the lengths of the two
     // lists. The space complexity is O(1), since we only use a few pointers and no extra space.
 
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode() {}
+     *     ListNode(int val) { this.val = val; }
+     *     ListNode(int val, ListNode next) {
+     *         this.val = val;
+     *         this.next = next;
+     *     }
+     * }
+     */
+
+    private class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // Create a dummy node to hold the result

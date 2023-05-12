@@ -31,7 +31,7 @@
 
 import java.util.Arrays;
 
-class Solution {
+class SolutionMaximumSubarray {
     public int maxSubArray(int[] nums) {
         // Initialize the current sum and the maximum sum to the first element
         int currentSum = nums[0];
