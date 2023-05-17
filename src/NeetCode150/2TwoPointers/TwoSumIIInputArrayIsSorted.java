@@ -70,6 +70,7 @@ class TwoSumIIInputArrayIsSorted {
             // Compare with the target
             if (sum == target) {
                 // Return []{i + 1, j + 1};
+                return new int[]{i + 1, j + 1};
             } else if (sum < target) {
                 // Increment i to move to a larger element
                 i++;
