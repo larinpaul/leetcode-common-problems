@@ -75,10 +75,10 @@ class ReorderList {
 
     // COde:
     public void reorderList(ListNode head) {
-        // edge case: empty or single ndoe list
+        // edge case: empty or single node list
         if (head == null || head.next == null) return;
 
-        // find the middle ndoe of the list
+        // find the middle node of the list
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
