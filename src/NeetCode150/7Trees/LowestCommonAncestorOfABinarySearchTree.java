@@ -68,7 +68,11 @@ class LowestCommonAncestorOfABinarySearchTree {
         int pVal = p.val;
         int qVal = q.val;
         // if both p and q are smaller than root, search left subtree
-        if (pVal < rootVal && qVal > rootVal) {
+        if (pVal < rootVal && qVal < rootVal) {
+            return lowestCommonAncestor(root.left, p, q);
+        }
+        // if both p and q are larger than root, search right subtree
+        else if (pVal > rootVal && qVal > rootVal) {
             return lowestCommonAncestor(root.right, p, q);
         }
         // otherwise, root is the LCA
