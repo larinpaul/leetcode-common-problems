@@ -75,7 +75,7 @@ class DesignAddAndSearchWordsDataStructure {
     TrieNode root;
 
     // Initialize data structure
-    public WordDictioanry() {
+    public WordDictionary() {
         root = new TrieNode();
     }
 
@@ -118,6 +118,7 @@ class DesignAddAndSearchWordsDataStructure {
             return false; // return false if no match found
         }
     }
+
 }
 
 /**
