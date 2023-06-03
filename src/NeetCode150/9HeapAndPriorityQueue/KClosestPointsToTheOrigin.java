@@ -75,7 +75,7 @@ class KClosestPointsToTheOrigin {
             res[i] = pq.poll();
         }
 
-        // Return the array of k closest points
+        // Return the array of k closest points.
         return res;
     }
 
