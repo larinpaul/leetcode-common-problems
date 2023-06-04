@@ -101,4 +101,9 @@ class CombinationSum {
     // up to M recursive calls. The space complexity is O(m) to store the current
     // combination during recursion
 
+    // When return; is used without a value, it is typically used in methods
+    // with a `void return type`
+    // Overall, `return;` without a value is used to terminate the execution of a method
+    // and indicate that it does not produce a specific return value.
+
 }
