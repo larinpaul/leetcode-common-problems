@@ -97,10 +97,20 @@ class PacificAtlanticWaterFlow {
         boolean[][] atlantic = new boolean[m][n];
 
         // Mark cells that can reach Pacific ocean
-        markOcean(heights, pacific);
+        for (int i = 0; i < m; i++) {
+            dfs(heights, i, 0, pacific, heights[i][0]);
+        }
+        for (int j = 0; j < n; j++) {
+            dfs(heights, 0, j, pacific, heights[0][j]);
+        }
 
         // Mark cells that can reach Atlantic ocean
-        markOcean(heights, atlantic);
+        for (int i = 0; i < m; i++) {
+            dfs(heights, i, n - 1, atlantic, heights[i][n - 1]);
+        }
+        for (int j = 0; j < n; j++) {
+            dfs(heights, m - 1, j, atlantic, heights[m - 1][j]);
+        }
 
         // Find cells that can reach both oceans
         for (int i = 0; i < m; i++) {
@@ -119,35 +129,10 @@ class PacificAtlanticWaterFlow {
         return result;
     }
 
-    // Helper function to mark cells that can reach an ocean
-    private void markOcean(int[][] heights, boolean[][] ocean) {
-        // Get matrix dimensions
-        int m = heights.length;
-        int n = heights[0].length;
-
-        // Iterate over top and bottom edges
-        for (int j = 0; j < n; j++) {
-            // Call DFS on top edge cell
-            dfs(heights, 0, j, ocean, Integer.MIN_VALUE);
-
-            // Call DFS on bottom edge cell
-            dfs(heights, m - 1, j, ocean, Integer.MIN_VALUE);
-        }
-
-        // Iterate over left and right edges
-        for (int i = 0; i < m; i++) {
-            // Call DFS on left edge cell
-            dfs(heights, i, 0, ocean, Integer.MIN_VALUE);
-
-            // Call DFS on right edge cell
-            dfs(heights, i, n - 1, ocean, Integer.MIN_VALUE);
-        }
-    }
-
     // Helper function to perform DFS on a cell
     private void dfs(int[][] heights, int i, int j, boolean[][] ocean, int prev) {
         // Check if cell is within bounds
-        if (i < 0 || i >= heights.length || j < 0 || j >= heights[0].length)  {
+        if (i < 0 || i >= heights.length || j < 0 || j >= heights[0].length) {
             return;
         }
 
