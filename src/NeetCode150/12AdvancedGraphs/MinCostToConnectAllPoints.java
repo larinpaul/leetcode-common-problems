@@ -66,7 +66,7 @@ class MinCostToConnectAllPoints {
             // loop through all other points
             for (int i = 0; i < points.length; i++) {
                 // if the point is not visited,
-                // add it to the queue with the cost of connecting it to the desitination point
+                // add it to the queue with the cost of connecting it to the destination point
                 if (!visited[i]) {
                     pq.offer(new int[]{dst, i, getDistance(points[dst], points[i])});
                 }
