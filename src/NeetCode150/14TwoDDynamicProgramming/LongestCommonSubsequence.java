@@ -88,7 +88,7 @@ class LongestCommonSubsequence {
             }
         }
 
-        // Return the value in the bottom right corner of the table, which is the lenngth of the LCS.
+        // Return the value in the bottom right corner of the table, which is the length of the LCS.
         return dp[n][m];
     }
 
