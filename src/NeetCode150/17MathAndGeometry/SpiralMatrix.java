@@ -69,7 +69,7 @@ class SpiralMatrix {
                 for (int j = right; j >= left; j--) {
                     output.add(matrix[bottom][j]); // Add the element to the output list
                 }
-                bottom--; // Update the bottom boundary top avoid repeating elements
+                bottom--; // Update the bottom boundary to avoid repeating elements
             }
 
             // Check if the left boundary is still valid
@@ -82,7 +82,7 @@ class SpiralMatrix {
             }
         }
 
-        return output; // Retunr the final output list
+        return output; // Return the final output list
     }
 
     // Big O:
