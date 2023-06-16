@@ -8,7 +8,7 @@
 // Please implement encode an decode
 
 // Example1
-// Input: ["list","code","love","you"]
+// Input: ["lint","code","love","you"]
 // Output: ["lint","code","love","you"]
 // Explanation:
 // One possible encode method is: "lint:;code:;love:;you"
@@ -95,9 +95,28 @@ class EncodeAndDecodeString {
     // as we need to store the encoded or decoded string in memory.
 
 
+    public static void main(String[] args) {
 
+        EncodeAndDecodeString codec = new EncodeAndDecodeString();
+
+        // create a list of strings to encode
+        List<String> strs = new ArrayList<>();
+        strs.add("lint");
+        strs.add("code");
+        strs.add("love");
+        strs.add("you");
+
+        // encode the list to a single string
+        String encoded = codec.encode(strs);
+        System.out.println("Encoded: " + encoded);
+
+        // decode the single string back to a list of strings
+        List<String> decoded = codec.decode(encoded);
+        System.out.println("Decoded: " + decoded);
+
+        // check if the decoded list is equal to the original list
+        System.out.println("Equal: " + strs.equals(decoded));
+
+    }
 
 }
-
-
-
