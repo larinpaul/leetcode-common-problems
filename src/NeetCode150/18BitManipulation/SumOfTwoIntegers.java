@@ -32,7 +32,7 @@ class SumOfTwoIntegers {
 
     public int getSum(int a, int b){
         while (b != 0) {
-            int sum = a ^ b; // calcualate sum without carrying
+            int sum = a ^ b; // calculate sum without carrying
             int carry = (a & b) << 1; // calculate carry
             a = sum;
             b = carry;
