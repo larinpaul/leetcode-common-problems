@@ -90,6 +90,7 @@ class BinaryTreeRightSizeView {
                 // If the node has a left child, add it to the queue
                 if (node.left != null) queue.offer(node.left);
                 // If the node has a right child, add it to the queue
+                if (node.right != null) queue.offer(node.right);
             }
             // After the for loop, add the value of the last node to the result list
             result.add(last);
