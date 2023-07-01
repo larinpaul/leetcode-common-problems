@@ -71,7 +71,7 @@ class SlidingWindowMaximum {
             }
             // append current index to back
             deque.offerLast(i);
-            // if winodw is full, add front element to result
+            // if window is full, add front element to result
             if (i >= k - 1) {
                 result[i - k + 1] = nums[deque.peekFirst()];
             }
