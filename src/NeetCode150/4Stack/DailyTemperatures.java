@@ -51,7 +51,7 @@ class DailyTemperatures {
                 stack.pop();
             }
             answer[i] = stack.isEmpty() ? 0 : stack.peek() - i; // calculate days or zero
-            stack.pop(i); // push current index
+            stack.push(i); // push current index
         }
         return answer;
     }
