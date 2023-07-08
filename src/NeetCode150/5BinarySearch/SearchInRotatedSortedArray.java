@@ -80,6 +80,10 @@ class SearchInRotatedSortedArray {
             }
         }
 
+        if (left == 0 && nums[left] < nums[nums.length - 1]) {
+            return -1;
+        }
+
         return left;
     }
 
