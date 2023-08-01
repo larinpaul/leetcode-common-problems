@@ -49,11 +49,70 @@
 // * 0 <= src, dst, k < n
 // * src != dst
 
+import java.util.*;
+
 class CheapestFlightsWithinKStops {
 
+    // This is a graph problem where we need to find the shortest path form the source city to
+    // the destination city with at most k stops. you can use Dijkstra's algorithm or Bellman-Ford algorithm
+    // to solve this problem, but they have different time and space complexities.
 
+    // Dijkstra's algorithm uses a priority queue to store the current cost and city, and updates
+    // the cost at each neighboring city if it is smaller than the previous one. It has a time
+    // complexity of O(E + V log V), where E is the number of edges and V is the number of
+    // vertices, and a space complexity of O(V).
 
+    // Bellman-Ford algorithm uses a dynamic programming approach, where is iterates over
+    // all the edges k times and updates the cost of each destination city if it is smaller than
+    // the previous one. It has a time complexity of O(kE), where E is the number of edges and
+    // k is the maximum number of stops, and a space complexity of O(V).
 
+    // Here is a possible code for Dijkstra's algorithm in Java:
 
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        // create a graph to represent the flights and their prices
+        Map<Integer, List<int[]>> graph = new HashMap<>();
+        for (int[] flight : flights) {
+            int from = flight[0];
+            int to = flight[1];
+            int price = flight[2];
+            graph.putIfAbsent(from, new ArrayList<>());
+            graph.get(from).add(new int[]{to, price});
+        }
+
+        // create a priority queue to store the current cost and city
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+        pq.offer(new int[]{0, src, k + 1}); // add one more stop for convenience
+
+        // loop until the queue is empty or the destination is reached
+        while (!pq.isEmpty()) {
+            int[] curr = pq.poll();
+            int cost = curr[0];
+            int city = curr[1];
+            int stops = curr[2];
+
+            // if the destination is reached, return the cost
+            if (city == dst) {
+                return cost;
+            }
+
+            // if there are still stops left, explore the neighboring cities
+            if (stops > 0) {
+                List<int[]> neighbors = graph.getOrDefault(city, new ArrayList<>());
+                for (int[] neighbor : neighbors) {
+                    int nextCity = neighbor[0];
+                    int nextPrice = neighbor[1];
+                    // add the neighboring city and the updaes cost to the queue
+                    pq.offer(new int[]{cost + nextPrice, nextCity, stops = 1});
+                }
+            }
+        }
+
+        // if no route is found, return -1
+        return -1;
+
+    }
+
+    // The big O notation for this code is O(E + V log V) for time and O(V) for space.
 
 }
