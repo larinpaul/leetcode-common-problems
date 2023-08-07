@@ -47,24 +47,19 @@ class JumpGameII {
     public int jump(int[] nums) {
         // Initialize the variables
         int jumps = 0;
-        int end = nums[0];
-        int maxPos = nums[0];
+        int end = 0;
+        int maxPos = 0;
 
         // Iterate through the array
-        for (int i = 0; i < nums.length; i++) {
-            // If we reach the end, return jumps
-            if (i == nums.length - 1) {
-                return jumps;
-            }
+        for (int i = 0; i < nums.length - 1; i++) {
+            // Update maxPos by taking the maximum of maxPos and i + nums[i]
+            maxPos = Math.max(maxPos, i + nums[i]);
 
             // If we reach the end of the current jump range, update jumps and end
             if (i == end) {
                 jumps++;
                 end = maxPos;
             }
-
-            // Update maxPos by taking the maximum of maxPos and i + nums[i]
-            maxPos = Math.max(maxPos, i + nums[i]);
         }
 
         // Return jumps
