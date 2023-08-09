@@ -60,7 +60,7 @@ class HandOfStraights {
                     int next = card + i;
                     // get the frequency of the next card value
                     int nextCount = map.getOrDefault(next, 0);
-                    // if the frequency is less than the current count, retirn false
+                    // if the frequency is less than the current count, return false
                     if (nextCount < count) {
                         return false;
                     }
