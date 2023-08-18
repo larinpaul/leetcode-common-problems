@@ -67,13 +67,16 @@ class PowXN {
 
     public double myPow(double x, int n) {
         // handle the edge case of n = Integer.MIN_VALUE
-        // because -n will overflow if (n == Integer.MIN_VALUE) {
-        //      return myPow(x * x, n / 2);
-        // }
+        // because -n will overflow
+        if (n == Integer.MIN_VALUE) {
+            x = x * x;
+            n = n / 2;
+        }
 
         // handle the case of negative exponent
         if (n < 0) {
-            return myPow(1 / x, -n);
+            x = 1 / x;
+            n = -n;
         }
 
         // base case of zero exponent
@@ -81,20 +84,14 @@ class PowXN {
             return 1;
         }
 
-        // base case of one exponent
-        if (n == 1) {
-            return x;
-        }
-
-        // recursive case of even exponent
-        if (n % 2 == 0) {
-            return myPow(x * x, n / 2);
-        }
+        double result = myPow(x * x, n / 2);
 
         // recursive case of odd exponent
-        else {
-            return x * myPow(x * x, n / 2);
+        if (n % 2 == 1) {
+            result *= x;
         }
+
+        return result;
     }
 
 }
